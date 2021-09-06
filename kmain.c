@@ -6,6 +6,19 @@
     #include "interrupts/keyboard.h"
     #include "interrupts/pic.h"
     #include "multiboot.h"
+    #include "memory/paging/paging.h"
+    
+    
+void init()
+{
+    
+   segments_install_gdt();
+   interrupts_install_idt();
+   init_paging();
+}
+    
+    
+    
     
     int kmain(unsigned int ebx)
     {
@@ -13,8 +26,7 @@
        //fb_write(arr, 20);
        //serial_configure(SERIAL_COM1_BASE, Baud_115200);
        //serial_write(SERIAL_COM1_BASE, arr, 20);
-       interrupts_install_idt();
-       segments_install_gdt();
+       init();
 
        //serial_write(0x3F8, arr, 4);
        
