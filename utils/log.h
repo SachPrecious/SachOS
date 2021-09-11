@@ -13,6 +13,7 @@
 #endif
 
 
+
 #if DEBUG >= 3
 #define info(msg, ...) printf("[info] " msg "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 #else
@@ -20,11 +21,13 @@
 #endif
 
 
+
 #if DEBUG >= 1
 #define warn(msg, ...) printf("[warn] %s:%i " msg "\n", __FILE__, __LINE__, ##__VA_ARGS__)
 #else
 #define warn(msg, ...)
 #endif
+
 
 
 #if DEBUG >= 0
