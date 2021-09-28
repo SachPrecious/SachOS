@@ -8,6 +8,8 @@
     #include "multiboot.h"
     #include "memory/paging/paging.h"
     
+#include "user_mode.h"
+    
     
 void init()
 {
@@ -16,6 +18,9 @@ void init()
    interrupts_install_idt();
    init_paging();
 }
+    
+    
+    
     
     
     
@@ -50,6 +55,12 @@ void init()
          char str[] = "Multiple modules loaded";
          serial_write(str,sizeof(str));
       }
+
+
+
+  
+  	
+  	switch_to_user_mode();
 
       return 0;
             
