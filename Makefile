@@ -1,11 +1,4 @@
-    OBJECTS = loader.o kmain.o drivers/io.o drivers/frame_buffer.o drivers/serial_port.o segmentation/gdt.o segmentation/segments.o interrupts/keyboard.o interrupts/interrupt_handlers.o interrupts/interrupts.o interrupts/pic.o interrupts/idt.o utils/common/common.o memory/paging/paging.o memory/paging/paging_enable.o memory/heap/memory.o interrupts/isr.o
-    
-  
-    
-    
-    
-    
-    
+    OBJECTS = loader.o kmain.o drivers/io.o drivers/frame_buffer.o drivers/serial_port.o segmentation/gdt.o segmentation/segments.o interrupts/keyboard.o interrupts/interrupt_handlers.o interrupts/interrupts.o interrupts/pic.o interrupts/idt.o utils/common/common.o memory/paging/paging.o memory/paging/paging_enable.o memory/heap/memory.o interrupts/isr.o user_mode.o
     CC = gcc
     CFLAGS = -m32 -nostdlib -fno-builtin -fno-stack-protector \
          -Wno-unused -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c -masm=intel
